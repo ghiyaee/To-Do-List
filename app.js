@@ -74,17 +74,17 @@ function removeItem(e) {
 
 function removeLocal(e) {
     const item = e.target;
-    const newi = item.parentElement.parentElement
-    console.log(newi);
+    const list = item.parentElement.parentElement
+    console.log(list);
        let todos;
        if (localStorage.getItem('todo') === null) {
                todos = [];
            } else {
            todos = JSON.parse(localStorage.getItem('todo'))
             }
-    console.log(todos.indexOf(newi.innerText));
-    let resl = todos.indexOf(newi)
-    todos.splice(resl,1)
+    let result = todos.indexOf(list.innerText)
+    console.log(result);
+    todos.splice(result,1)
     localStorage.setItem('todo', JSON.stringify(todos));
     
 }
